@@ -10,16 +10,21 @@
 
 Console.WriteLine("Введите целое число больше 1");
 
-int N = int.Parse(Console.ReadLine());
+int number = 0;
 
-if(N <= 1) Console.WriteLine("Введённое число не соответствует указанному интервалу");
-else {
-    int count = 2;
-    Console.WriteLine("Все чётные числа от 1 до N");
-    Console.Write(count);
-    count = count + 2;
-    while(count <= N) {
-        Console.Write(", " + count);
-        count = count + 2;
-    }
+while(true) { 
+    Console.WriteLine("Введите целое число больше 1"); 
+    number = int.Parse(Console.ReadLine());
+    if(number > 1) break;
+    else Console.WriteLine("Вы ввели неверное число.");
+}
+
+Console.WriteLine("Вы ввели верное число, программа выведет на экран интервал целых чисел от 1 до введённого числа:");
+
+int count = 2;
+Console.Write(count);
+count += 2;
+while(count <= number) {
+    Console.Write(", " + count);
+    count += 2;
 }
